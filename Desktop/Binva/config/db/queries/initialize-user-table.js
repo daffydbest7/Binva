@@ -3,11 +3,11 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 
 const createUsersAccount = async () => {
-  const dropTableQuery = `DROP TABLE IF EXISTS users;`;
+  const dropTableQuery = `DROP TABLE IF EXISTS binva_user;`;
   const createUuid =`CREATE EXTENSION IF NOT EXISTS "uuid-ossp" `;
 
   const createUsersQuery = `
-    CREATE TABLE IF NOT EXISTS users (
+    CREATE TABLE IF NOT EXISTS binva_user (
       id uuid DEFAULT uuid_generate_v4(),
       firstName VARCHAR(60) NOT NULL,
       lastName VARCHAR(60) NOT NULL,
@@ -23,7 +23,7 @@ const createUsersAccount = async () => {
   `;
 
   const insertUserDataQuery = `
-    INSERT INTO users (
+    INSERT INTO binva_user (
       firstName, lastName, email, password, avatar, admin, merchant, created_on
     ) VALUES (
       $1, $2, $3, $4, $5, $6, $7, $8

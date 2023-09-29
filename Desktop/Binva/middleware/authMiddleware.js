@@ -10,7 +10,7 @@ export const authGuard = async (req, res, next) =>{
         try{
           const token = req.headers.authorization.split(" ")[1];
           const id =  verify(token, process.env.JWT_SECRET);
-          const result = await db.query("SELECT * FROM users WHERE id = $1", [
+          const result = await db.query("SELECT * FROM binva_user WHERE id = $1", [
             id.userId,
           ]); 
           // if user is not found

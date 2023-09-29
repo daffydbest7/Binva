@@ -20,7 +20,7 @@ if(!admin){
 }
 
 // check if email already exists
-const emailCheckQuery = "SELECT COUNT(*) FROM users WHERE email = $1";
+const emailCheckQuery = "SELECT COUNT(*) FROM binva_user WHERE email = $1";
 const emailCheckValue = [userData.email];
 const emailCheckResult = await db.query(emailCheckQuery, emailCheckValue);
 const emailExists = emailCheckResult.rows[0].count > 0;
@@ -38,7 +38,7 @@ const hashedPassword = await bcrypt.hash(userData.password, 10);
 
 //insert the new user data 
 const insertUserDataQuery = `
-      INSERT INTO users (
+      INSERT INTO binva_user (
         firstName, lastName, email, password, avatar, admin, merchant, created_on
       ) VALUES (
         $1, $2, $3, $4, $5, $6, $7, $8
@@ -96,7 +96,7 @@ const signUp = async (req, res) =>{
 
 
 // check if email already exists
-const emailCheckQuery = "SELECT COUNT(*) FROM users WHERE email = $1";
+const emailCheckQuery = "SELECT COUNT(*) FROM binva_user WHERE email = $1";
 const emailCheckValue = [userData.email];
 const emailCheckResult = await db.query(emailCheckQuery, emailCheckValue);
 const emailExists = emailCheckResult.rows[0].count > 0;
@@ -114,7 +114,7 @@ const hashedPassword = await bcrypt.hash(userData.password, 10);
 
 //insert the new user data 
 const insertUserDataQuery = `
-    INSERT INTO users (
+    INSERT INTO binva_user (
       firstName, lastName, email, password, avatar, admin, merchant, created_on
     ) VALUES (
       $1, $2, $3, $4, $5, $6, $7, $8
@@ -174,7 +174,7 @@ const getAllUsers = async (req, res) => {
       });
     }
     try {
-      const result = await db.query("SELECT * FROM users");
+      const result = await db.query("SELECT * FROM binva_user");
       return res.status(201).json({
         status: "success",
         data: result.rows,
@@ -193,7 +193,7 @@ const getAllUsers = async (req, res) => {
     const { email, password } = req.body;
     try {
     // check if email already exists
-    const emailCheckQuery = "SELECT * FROM users WHERE email = $1";
+    const emailCheckQuery = "SELECT * FROM binva_user WHERE email = $1";
     const emailCheckValue = [email];
     const emailCheckResult = await db.query(emailCheckQuery, emailCheckValue);
     //const emailExists = emailCheckResult.rows[0].count > 0;
@@ -256,7 +256,7 @@ const getLoggedInUser = async (req, res) => {
   }
   try {
     const value = [user.id];
-    const userQuery = "SELECT * FROM users WHERE id = $1"
+    const userQuery = "SELECT * FROM binva_user WHERE id = $1"
     const result = await db.query(userQuery,value);
     return res.status(201).json({
       status: "success",
