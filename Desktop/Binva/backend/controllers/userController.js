@@ -245,15 +245,9 @@ const getAllUsers = async (req, res) => {
 // get all users
 const getLoggedInUser = async (req, res) => {
   const admin = req.user?.admin;
+  const merchant = req.user?.merchant;
   const user = req.user;
-
-  // Check if the authenticated user is an admin
-  if ( !admin ) {
-    return res.status(403).json({
-      status: "error",
-      error: "Only admin users can access this resource",
-    });
-  }
+ 
   try {
     const value = [user.id];
     const userQuery = "SELECT * FROM binva_user WHERE id = $1"
@@ -266,6 +260,7 @@ const getLoggedInUser = async (req, res) => {
         firstname: user.firstname,
         email: user.email,
         admin: user.admin,
+        merchant:user.merchant,
     }
     });
 

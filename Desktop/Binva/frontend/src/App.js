@@ -29,6 +29,7 @@ function App() {
         <Route index path="/contact" element={ <ContactPage/>} />
         <Route index path="/enquiry/volunteer" element={ <VolunteerPage/>} />
         <Route index path="/article" element={ <ArticlePage/>} />
+        <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/eni-admin" element={<LoginPage />}> </Route>
           <Route path ="/admin" element={<AdminLayout/>} >
           <Route index element={<Admin/>} />

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const login = async ({ email, password}) => {
     try {
-        const {data} = await axios.post('/api/v1/login', {
+        const {data} = await axios.post('https://binva.onrender.com/api/v1/login', {
             email,
             password,
         })
@@ -20,7 +20,7 @@ export const getLoggedInUser = async ({token}) => {
                 Authorization: `Bearer ${token}`,
             },
         }
-        const {data} = await axios.get('/api/v1/getloginuser', config);
+        const {data} = await axios.get('https://binva.onrender.com/api/v1/getloginuser', config);
         return data;
     }catch(error){
         if(error.response && error.response.data.message)

@@ -143,8 +143,8 @@ const logoutHandler =()=>{
         
       </div>) :
       (
-        <button onClick={()=> navigate("/donate")}
-        className='mt-5 lg:mt-0 border-2 border-eni_orange text-2xl px-6 py-2 rounded-full text-eni_orange font-semibold hover:bg-eni_orange hover:text-white transition-all duration-500'>DONATE</button>
+        <button onClick={()=> navigate("/login")}
+        className='mt-5 lg:mt-0 border-2 border-eni_orange text-2xl px-6 py-2 rounded-full text-eni_orange font-semibold hover:bg-eni_orange hover:text-white transition-all duration-500'>SIGN IN</button>
       )
       }
       

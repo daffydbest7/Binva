@@ -3,10 +3,10 @@ import { UseSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 
 const Admin = () => {
-  return <div>Admin dashboard
+  return <div>Dashboard
 
     <div> </div>
-  </div>;
+  </div>
 };
 
 export default Admin;
