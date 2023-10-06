@@ -132,7 +132,26 @@ const logoutHandler =()=>{
                           Admin Dashboard
                         </button>
                       )}
+                {userState?.userInfo?.data?.merchant && (
+                        <button
+                          onClick={() => navigate("/admin")}
+                          type="button"
+                          className="hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black"
+                        >
+                          Merchant Dashboard
+                        </button>
+                      )}
+                 {!userState?.userInfo?.data?.merchant && !userState?.userInfo?.data?.admin && (
+                        <button
+                          onClick={() => navigate("/admin")}
+                          type="button"
+                          className="hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black"
+                        >
+                          Portal
+                        </button>
+                      )}
                   
+      
                     <button onClick={logoutHandler} type='button' className='hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black'>
                       Logout
                     </button>

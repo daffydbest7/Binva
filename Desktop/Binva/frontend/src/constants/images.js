@@ -16,13 +16,14 @@ import doubra from "../assets/posts/doubra.jpg";
 import marian from "../assets/posts/marian.jpg";
 import ifeanyi from "../assets/posts/ifeanyi.jpg";
 import nabena from "../assets/posts/victor.jpg";
+import binva from "../assets/binva.jpg";
 
 
 
 
 const images = {
     logo,enibobanner, enibobanner2,eniboImg,enibo1, enibokids, enibokids1, enibokids2, 
-    ctaDonate, enibobanner3,enibobanner4,eniboVolunteer, david,doubra,marian,victor,ifeanyi,nabena,
+    ctaDonate, enibobanner3,enibobanner4,eniboVolunteer, david,doubra,marian,victor,ifeanyi,nabena,binva
    
 }
 

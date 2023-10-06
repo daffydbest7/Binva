@@ -216,7 +216,8 @@ const getAllUsers = async (req, res) => {
             userId: user.id,
             firstName: user.firstname,
             email: user.email,
-            admin: user.admin
+            admin: user.admin,
+            merchant: user.merchant
         };
         //sign the payload
         const token = sign(payload, process.env.JWT_SECRET, {
@@ -231,6 +232,7 @@ const getAllUsers = async (req, res) => {
                 firstname: user.firstname,
                 email: user.email,
                 admin: user.admin,
+                merchant: user.merchant,
                 token: token,
             }
         });
