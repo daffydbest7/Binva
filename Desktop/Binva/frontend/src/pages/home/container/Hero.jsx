@@ -7,7 +7,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   return (
-  <section className='container mx-auto bg-gradient-to-b from-eni_orange to-green-300 lg:h-[500px] text-white lg:mt-[35px] mb-[10px] rounded-lg'>
+  <section className='container mx-auto bg-gradient-to-b from-[#008000] to-[#007E00] lg:h-screen text-white lg:mt-[35px] mb-[10px] rounded-lg'>
    
     <Carousel 
     autoplay
@@ -16,21 +16,26 @@ const Hero = () => {
     dotPosition='down'
     autoplaySpeed={8000}>
     <div >
-    <div className='lg:flex lg:flex-row justify-between items-center mx-auto '>
+    <div className='lg:flex lg:flex-row justify-evenly items-center mx-auto '>
        {/**left */}
       <div className='hidden lg:block text-center '> 
-        <h1 className='lg:ml-[250px] font-bold text-4xl mb-4 '> ENIBO ALBERT CHARITY FOUNDATION </h1>
-        <p className='lg:ml-[250px] font-bold text-xl mb-4'>
+        <h2 className='text-white text-6xl mt-4'> Our goal is to safeguard <br/>your finances against<br/> fraud of all kinds</h2>
+        <p className='text-white text-2xl mt-8'>We are dedicated to protecting your funds and investments from prying<br/>
+          hands with our exclusive wide range of available services at your disposal.
+          <br/>Your happiness and satisfaction is important to us.
+        
+        </p>
+        <p className=' font-bold text-xl mt-4 mb-4 text-white'>
         <TypeAnimation
             sequence={[
             1000,
-            'Quality Education... ',
+            'Secure Payment gateway... ',
             1000, 
-            'No Poverty...',
+            'Auto Fraud Detection...',
              1000,
-             'Zero Hunger...',
+             'Multiple Merchants...',
              1000,
-            'Access to Clean Water and Sanitation...',
+            '24/7 Support...',
             1000,
             
           ]}
@@ -39,30 +44,49 @@ const Hero = () => {
           repeat={Infinity}
         />
         </p>
-        <button className='lg:ml-[250px] rounded-lg text-2xl  bg-blue-500 p-4 text-white hover:bg-blue-300 hover:font-bold'> DONATE </button>
+        <button className=' rounded-lg text-2xl  bg-[#0000ff] p-4 text-white hover:bg-[#0101F2] hover:font-bold'> START FREE TRIAL </button>
+       
       </div>
      
+     
      {/**right */}
-       <img src={images.enibobanner3} alt='carousel'style={{width:"700px", height:"500px"}} className='lg:h-[500px] '/>
+       <img src={images.banner} alt='carousel'style={{width:"400px", height:"300px"}} className='lg:mt-[100px] rounded-lg'/>
     
     </div>
+      <div className='text-white text-center mt-8'>Used by 20k+ businesses from small startups to household names</div>
+      <div className='flex flex-row justify-center space-x-4 mt-4'>
+      <img src={images.partner}  alt="partners"/>
+      <img src={images.partner2} alt="partners"/>
+      <img src={images.partner3} alt="partners"/>
+      <img src={images.partner4} alt="partners"/>
+      <img src={images.partner5} alt="partners"/>
+      <img src={images.partner6} alt="partners"/>
+      <img src={images.partner7} alt="partners"/>
+      <img src={images.partner8} alt="partners"/>
+        
+      </div>    
     </div>
-    <div>
-    <div className='lg:flex lg:flex-row justify-between items-center mx-auto ' >
+    <div >
+    <div className='lg:flex lg:flex-row justify-evenly items-center mx-auto '>
        {/**left */}
-       <div className='hidden lg:block text-center '> 
-        <h1 className='lg:ml-[250px] font-bold text-4xl mb-4 '> ENIBO ALBERT CHARITY FOUNDATION </h1>
-        <p className='lg:ml-[250px] font-bold text-xl mb-4'>
+      <div className='hidden lg:block text-center '> 
+        <h2 className='text-white text-6xl mt-4'> Our goal is to safeguard <br/>your finances against<br/> fraud of all kinds</h2>
+        <p className='text-white text-2xl mt-8'>We are dedicated to protecting your funds and investments from prying<br/>
+          hands with our exclusive wide range of available services at your disposal.
+          <br/>Your happiness and satisfaction is important to us.
+        
+        </p>
+        <p className=' font-bold text-xl mt-4 mb-4 text-white'>
         <TypeAnimation
             sequence={[
             1000,
-            'Quality Education... ',
+            'Secure Payment gateway... ',
             1000, 
-            'No Poverty...',
+            'Auto Fraud Detection...',
              1000,
-             'Zero Hunger...',
+             'Multiple Merchants...',
              1000,
-            'Access to Clean Water and Sanitation...',
+            '24/7 Support...',
             1000,
             
           ]}
@@ -71,28 +95,49 @@ const Hero = () => {
           repeat={Infinity}
         />
         </p>
-        <button className='lg:ml-[250px] rounded-lg text-2xl  bg-blue-500 p-4 text-white hover:bg-blue-300 hover:font-bold'> DONATE </button>
+        <button className=' rounded-lg text-2xl  bg-[#0000ff] p-4 text-white hover:bg-[#0101F2] hover:font-bold'> START FREE TRIAL </button>
+       
       </div>
-    <img src={images.enibobanner} alt='carousel' style={{width:"700px", height:"500px"}} className=' lg:h-[500px] '/>
-    </div>
-    </div>
+     
+     
+     {/**right */}
+       <img src={images.binva_banner2} alt='carousel'style={{width:"400px", height:"300px"}} className='lg:mt-[100px] rounded-lg'/>
     
-    <div>
-    <div className='lg:flex lg:flex-row justify-between items-center mx-auto'>
+    </div>
+      <div className='text-white text-center mt-8'>Used by 20k+ businesses from small startups to household names</div>
+      <div className='flex flex-row justify-center space-x-4 mt-4'>
+      <img src={images.partner}  alt="partners"/>
+      <img src={images.partner2} alt="partners"/>
+      <img src={images.partner3} alt="partners"/>
+      <img src={images.partner4} alt="partners"/>
+      <img src={images.partner5} alt="partners"/>
+      <img src={images.partner6} alt="partners"/>
+      <img src={images.partner7} alt="partners"/>
+      <img src={images.partner8} alt="partners"/>
+        
+      </div>    
+    </div>
+    <div >
+    <div className='lg:flex lg:flex-row justify-evenly items-center mx-auto '>
        {/**left */}
-       <div className='hidden lg:block text-center '> 
-        <h1 className='lg:ml-[250px] font-bold text-4xl mb-4 '> ENIBO ALBERT CHARITY FOUNDATION </h1>
-        <p className='lg:ml-[250px] font-bold text-xl mb-4'>
+      <div className='hidden lg:block text-center '> 
+        <h2 className='text-white text-6xl mt-4'> Our goal is to safeguard <br/>your finances against<br/> fraud of all kinds</h2>
+        <p className='text-white text-2xl mt-8'>We are dedicated to protecting your funds and investments from prying<br/>
+          hands with our exclusive wide range of available services at your disposal.
+          <br/>Your happiness and satisfaction is important to us.
+        
+        </p>
+        <p className=' font-bold text-xl mt-4 mb-4 text-white'>
         <TypeAnimation
             sequence={[
             1000,
-            'Quality Education... ',
+            'Secure Payment gateway... ',
             1000, 
-            'No Poverty...',
+            'Auto Fraud Detection...',
              1000,
-             'Zero Hunger...',
+             'Multiple Merchants...',
              1000,
-            'Access to Clean Water and Sanitation...',
+            '24/7 Support...',
             1000,
             
           ]}
@@ -101,41 +146,134 @@ const Hero = () => {
           repeat={Infinity}
         />
         </p>
-        <button className='lg:ml-[250px] rounded-lg text-2xl  bg-blue-500 p-4 text-white hover:bg-blue-300 hover:font-bold'> DONATE </button>
+        <button className=' rounded-lg text-2xl  bg-[#0000ff] p-4 text-white hover:bg-[#0101F2] hover:font-bold'> START FREE TRIAL </button>
+       
       </div>
-    <img src={images.enibobanner4} alt='carousel' style={{width:"700px", height:"500px"}} className=' lg:h-[500px]'/>
+     
+     
+     {/**right */}
+       <img src={images.binva_banner3} alt='carousel'style={{width:"400px", height:"300px"}} className='lg:mt-[100px] rounded-lg'/>
+    
     </div>
+      <div className='text-white text-center mt-8'>Used by 20k+ businesses from small startups to household names</div>
+      <div className='flex flex-row justify-center space-x-4 mt-4'>
+      <img src={images.partner}  alt="partners"/>
+      <img src={images.partner2} alt="partners"/>
+      <img src={images.partner3} alt="partners"/>
+      <img src={images.partner4} alt="partners"/>
+      <img src={images.partner5} alt="partners"/>
+      <img src={images.partner6} alt="partners"/>
+      <img src={images.partner7} alt="partners"/>
+      <img src={images.partner8} alt="partners"/>
+        
+      </div>    
+    </div>
+    <div >
+    <div className='lg:flex lg:flex-row justify-evenly items-center mx-auto '>
+       {/**left */}
+      <div className='hidden lg:block text-center '> 
+        <h2 className='text-white text-6xl mt-4'> Our goal is to safeguard <br/>your finances against<br/> fraud of all kinds</h2>
+        <p className='text-white text-2xl mt-8'>We are dedicated to protecting your funds and investments from prying<br/>
+          hands with our exclusive wide range of available services at your disposal.
+          <br/>Your happiness and satisfaction is important to us.
+        
+        </p>
+        <p className=' font-bold text-xl mt-4 mb-4 text-white'>
+        <TypeAnimation
+            sequence={[
+            1000,
+            'Secure Payment gateway... ',
+            1000, 
+            'Auto Fraud Detection...',
+             1000,
+             'Multiple Merchants...',
+             1000,
+            '24/7 Support...',
+            1000,
+            
+          ]}
+          wrapper="span"
+          speed={50}
+          repeat={Infinity}
+        />
+        </p>
+        <button className=' rounded-lg text-2xl  bg-[#0000ff] p-4 text-white hover:bg-[#0101F2] hover:font-bold'> START FREE TRIAL </button>
+       
+      </div>
+     
+     
+     {/**right */}
+       <img src={images.binva_banner1} alt='carousel'style={{width:"400px", height:"300px"}} className='lg:mt-[100px] rounded-lg'/>
+    
+    </div>
+      <div className='text-white text-center mt-8'>Used by 20k+ businesses from small startups to household names</div>
+      <div className='flex flex-row justify-center space-x-4 mt-4'>
+      <img src={images.partner}  alt="partners"/>
+      <img src={images.partner2} alt="partners"/>
+      <img src={images.partner3} alt="partners"/>
+      <img src={images.partner4} alt="partners"/>
+      <img src={images.partner5} alt="partners"/>
+      <img src={images.partner6} alt="partners"/>
+      <img src={images.partner7} alt="partners"/>
+      <img src={images.partner8} alt="partners"/>
+        
+      </div>    
+    </div>
+    <div >
+    <div className='lg:flex lg:flex-row justify-evenly items-center mx-auto '>
+       {/**left */}
+      <div className='hidden lg:block text-center '> 
+        <h2 className='text-white text-6xl mt-4'> Our goal is to safeguard <br/>your finances against<br/> fraud of all kinds</h2>
+        <p className='text-white text-2xl mt-8'>We are dedicated to protecting your funds and investments from prying<br/>
+          hands with our exclusive wide range of available services at your disposal.
+          <br/>Your happiness and satisfaction is important to us.
+        
+        </p>
+        <p className=' font-bold text-xl mt-4 mb-4 text-white'>
+        <TypeAnimation
+            sequence={[
+            1000,
+            'Secure Payment gateway... ',
+            1000, 
+            'Auto Fraud Detection...',
+             1000,
+             'Multiple Merchants...',
+             1000,
+            '24/7 Support...',
+            1000,
+            
+          ]}
+          wrapper="span"
+          speed={50}
+          repeat={Infinity}
+        />
+        </p>
+        <button className=' rounded-lg text-2xl  bg-[#0000ff] p-4 text-white hover:bg-[#0101F2] hover:font-bold'> START FREE TRIAL </button>
+       
+      </div>
+     
+     
+     {/**right */}
+       <img src={images.binva_banner4} alt='carousel'style={{width:"400px", height:"300px"}} className='lg:mt-[100px] rounded-lg'/>
+    
+    </div>
+      <div className='text-white text-center mt-8'>Used by 20k+ businesses from small startups to household names</div>
+      <div className='flex flex-row justify-center space-x-4 mt-4'>
+      <img src={images.partner}  alt="partners"/>
+      <img src={images.partner2} alt="partners"/>
+      <img src={images.partner3} alt="partners"/>
+      <img src={images.partner4} alt="partners"/>
+      <img src={images.partner5} alt="partners"/>
+      <img src={images.partner6} alt="partners"/>
+      <img src={images.partner7} alt="partners"/>
+      <img src={images.partner8} alt="partners"/>
+        
+      </div>    
     </div>
     
-    <div>
-    <div  className='lg:flex lg:flex-row justify-between items-center mx-auto'>
-     {/**left */}
-     <div className='hidden lg:block text-center '> 
-        <h1 className='lg:ml-[250px] font-bold text-4xl mb-4 '> ENIBO ALBERT CHARITY FOUNDATION </h1>
-        <p className='lg:ml-[250px] font-bold text-xl mb-4'>
-        <TypeAnimation
-            sequence={[
-            1000,
-            'Quality Education... ',
-            1000, 
-            'No Poverty...',
-             1000,
-             'Zero Hunger...',
-             1000,
-            'Access to Clean Water and Sanitation...',
-            1000,
-            
-          ]}
-          wrapper="span"
-          speed={50}
-          repeat={Infinity}
-        />
-        </p>
-        <button className='lg:ml-[250px] rounded-lg text-2xl  bg-blue-500 p-4 text-white hover:bg-blue-300 hover:font-bold'> DONATE </button>
-      </div>
-      <img src={images.enibobanner2} alt='carousel' style={{width:"700px", height:"500px"}} className=' lg:h-[500px] '/>
-    </div>
-    </div>
+    
+    
+    
    </Carousel>
     </section>
 

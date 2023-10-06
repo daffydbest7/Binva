@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { images } from '../constants';
-import {AiOutlineMenu, AiOutlineClose, } from "react-icons/ai"
+import {AiOutlineMenu, AiOutlineClose, AiOutlinePhone} from "react-icons/ai"
 import {MdKeyboardArrowDown} from "react-icons/md";
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../store/actions/user';
@@ -12,16 +12,16 @@ import {PiSunLight} from "react-icons/pi";
 
 const NavListInfo = [
   { name: "Home", type: "link", href: "/" },
-  { name: "About", type: "link", href: "/about" },
+  { name: "Company", type: "link", href: "/about" },
   {
     name: "Enquiry",
     type: "dropdown",
     items: [
       { title: "Faq", href: "/enquiry/faq" },
-      { title: "Volunteer", href: "/enquiry/volunteer" },
+      { title: "Partners", href: "/enquiry/volunteer" },
     ],
   },
-  { name: "Articles", type: "link", href: "/article" },
+  { name: "Resources", type: "link", href: "/article" },
   { name: "Contact", type: "link", href: "/contact" },
 ];
 
@@ -37,12 +37,12 @@ const NavList =({item})=>{
   return (
     <li className=' relative group text-2xl'>
       { item.type === "link" ? (<>
-          <Link to={item.href} className='px-4 py-2 hover:text-eni_orange'>{item.name}
+          <Link to={item.href} className='px-4 py-2 hover:text-[#0000ff]'>{item.name}
           </Link>
-          <span className='cursor-pointer text-eni_orange absolute transition-all duration-500 font-bold right-0 top-0  group-hover:right-[80%] opacity-0 group-hover:opacity-100'></span>
+          <span className='cursor-pointer text-[#0000ff] absolute transition-all duration-500 font-bold right-0 top-0  group-hover:right-[80%] opacity-0 group-hover:opacity-100'></span>
           </> 
           ): (
-          <div className='flex flex-col items-center  hover:text-eni_orange'>
+          <div className='flex flex-col items-center  hover:text-[#0000ff]'>
            <button onClick={toggleDropdownHandler}
            className='px-4 py-2 group-hover flex gap-x-1 items-center'> 
            {item.name}
@@ -52,7 +52,7 @@ const NavList =({item})=>{
             <ul className='bg-black/80 lg:bg-transparent text-center flex flex-col shadow-lg rounded-lg overflow-hidden'>
                 {item.items.map((page,index)=> (
                   
-                    <Link key={index} to={page.href} className='hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black'>
+                    <Link key={index} to={page.href} className='hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black'>
                       {page.title}
                     </Link>
                   
@@ -90,10 +90,18 @@ const logoutHandler =()=>{
 }
 
   return (
-    <section className='sticky top-0 left-0 z-50  bg-white'>
-    <div className='container mx-auto px-5 flex justify-between items-center'>
+    <section className='sticky top-0 left-0 z-50  bg-[#e9e4e4]'>
+      <marquee className="ml-[200px] mr-[200px]">
+      <div className='container  hidden lg:flex lg:flex-row items-center space-x-2'> 
+        <span> <AiOutlinePhone size={20}/> </span>
+        <span className='text-xl'>+234 813 000 000</span>
+      </div>
+      </marquee>
+      
+    <div className='container mx-auto px-5 flex justify-between lg:justify-evenly items-center'>
     <Link to="/">
-      <img className='w-32 md:w-32 lg:w-[170px] lg:h-[130px]' src={images.logo} alt="logo"/>
+      <img className='w-32 md:w-32 ' src={images.binva} alt="logo"/>
+
     </Link>
     {/** hamburger icons */}
     <div className='lg:hidden z-50'>
@@ -117,7 +125,7 @@ const logoutHandler =()=>{
         <div className='relative group'>
         <div className='flex flex-col items-center'>
            <button onClick={()=> setProfileDropdown(!profileDropdown)} 
-           className='text-2xl px-4 py-2 group-hover flex gap-x-1 items-center mt-5 lg:mt-0 border-2 bg-eni_orange rounded-full text-white font-semibold hover:bg-eni_orange hover:text-white transition-all duration-500'> 
+           className='text-2xl px-4 py-2 group-hover flex gap-x-1 items-center mt-5 lg:mt-0 border-2 bg-[#0000ff] rounded-full text-white font-semibold hover:bg-[#0c0c4d] hover:text-white transition-all duration-500'> 
            <span>{userState?.userInfo?.data?.firstname}</span>
            <MdKeyboardArrowDown/>
            </button>
@@ -127,7 +135,7 @@ const logoutHandler =()=>{
                         <button
                           onClick={() => navigate("/admin")}
                           type="button"
-                          className="hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black"
+                          className="hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black"
                         >
                           Admin Dashboard
                         </button>
@@ -136,7 +144,7 @@ const logoutHandler =()=>{
                         <button
                           onClick={() => navigate("/admin")}
                           type="button"
-                          className="hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black"
+                          className="hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black"
                         >
                           Merchant Dashboard
                         </button>
@@ -145,14 +153,14 @@ const logoutHandler =()=>{
                         <button
                           onClick={() => navigate("/admin")}
                           type="button"
-                          className="hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black"
+                          className="hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black"
                         >
                           Portal
                         </button>
                       )}
                   
       
-                    <button onClick={logoutHandler} type='button' className='hover:bg-eni_orange hover:text-white px-4 py-2 text-white lg:text-black'>
+                    <button onClick={logoutHandler} type='button' className='hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black'>
                       Logout
                     </button>
             </ul>

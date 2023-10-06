@@ -16,6 +16,7 @@ module.exports = {
         opensans: ["'Open Sans'", "sans-serif"],
         roboto: ["'Roboto'", "sans-serif"],
       },
+     
     },
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
