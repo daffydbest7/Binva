@@ -37,7 +37,7 @@ const getAllProduct = async (req, res) => {
 
 // get all Products by Merchants Id
 const getAllProductByMerchantsId = async (req, res) => {
-  const merchantId = req.params;
+  const merchantId = req.params?.merchantId;
   
   try {
 
