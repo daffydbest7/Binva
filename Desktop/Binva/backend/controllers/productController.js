@@ -42,8 +42,8 @@ const getAllProductByMerchantsId = async (req, res) => {
   try {
 
     const productquery = "SELECT * FROM product WHERE merchantId = $1";
-
-    const result = await db.query(productquery, [merchantId]);
+    const id = [merchantId];
+    const result = await db.query(productquery, id);
     return res.status(201).json({
       status: "success",
       data: result.rows,
