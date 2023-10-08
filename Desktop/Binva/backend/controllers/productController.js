@@ -30,7 +30,7 @@ const getAllProduct = async (req, res) => {
       console.error(error);
       res.status(500).json({
         status: "error",
-        error: "An error occurred while fetching users",
+        error: "An error occurred while fetching products",
       });
     }
   };
@@ -57,8 +57,30 @@ const getAllProductByMerchantsId = async (req, res) => {
   }
 };  
 
+// get Single Products by Id
+const getSingleProduct = async (req, res) => {
+  const productId = req.params?.productId;
+  
+  try {
+
+    const productquery = "SELECT * FROM product WHERE id = $1";
+    const id = [productId];
+    const result = await db.query(productquery, id);
+    return res.status(201).json({
+      status: "success",
+      data: result.rows,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      status: "error",
+      error: "An error occurred while fetching products",
+    });
+  }
+};  
 
 
 
 
-module.exports = { getAllProduct,getAllProductByMerchantsId};  
+
+module.exports = { getAllProduct,getAllProductByMerchantsId, getSingleProduct};  
