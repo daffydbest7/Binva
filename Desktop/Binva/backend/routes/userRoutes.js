@@ -4,6 +4,7 @@ import {
   createUser,
   loginUser,
   getAllUsers,
+  getAllMerchants,
   getLoggedInUser,
   signUp
 } from "../controllers/userController.js";
@@ -14,6 +15,7 @@ router.post("/auth/create-user", authGuard, createUser );
 router.post("/login", loginUser);
 router.post("/signup", signUp);
 router.get("/getusers", authGuard, getAllUsers);
+router.get("/getmerchants", getAllMerchants);
 router.get("/getloginuser", authGuard, getLoggedInUser);
 
 

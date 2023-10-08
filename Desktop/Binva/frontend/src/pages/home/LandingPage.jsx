@@ -6,7 +6,7 @@ import Stat from './container/Stat';
 import Testimony from './container/Testimony';
 import Partners from './container/Partners';
 import FloatingAlert from './container/FloatingAlert';
-import Newsletter from './container/Newsletter';
+
 
 const LandingPage = () => {
   return <MainLayout>
@@ -16,7 +16,7 @@ const LandingPage = () => {
    <Stat/>
    <Testimony/>
    <Partners/>
-   <Newsletter/>
+   
    <FloatingAlert/>
   </MainLayout>
   

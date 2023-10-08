@@ -188,6 +188,25 @@ const getAllUsers = async (req, res) => {
     }
   };
 
+// get all Merchants
+const getAllMerchants = async (req, res) => {
+  //const admin = req.user?.admin;
+
+  try {
+    const result = await db.query("SELECT * FROM binva_user WHERE merchant = TRUE");
+    return res.status(201).json({
+      status: "success",
+      data: result.rows,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      status: "error",
+      error: "An error occurred while fetching users",
+    });
+  }
+};  
+
  //login
  const loginUser = async (req, res, next) => {
     const { email, password } = req.body;
@@ -275,4 +294,4 @@ const getLoggedInUser = async (req, res) => {
   }
 };
 
-module.exports = {createUser, getAllUsers, loginUser, getLoggedInUser, signUp};  
+module.exports = {createUser, getAllUsers,getAllMerchants, loginUser, getLoggedInUser, signUp};  

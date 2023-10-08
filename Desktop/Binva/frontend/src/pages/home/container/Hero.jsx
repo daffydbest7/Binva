@@ -257,16 +257,16 @@ const Hero = () => {
        <img src={images.binva_banner4} alt='carousel'style={{width:"400px", height:"300px"}} className='lg:mt-[100px] rounded-lg'/>
     
     </div>
-      <div className='text-white text-center mt-8'>Used by 20k+ businesses from small startups to household names</div>
-      <div className='flex flex-row justify-center space-x-4 mt-4'>
-      <img src={images.partner}  alt="partners"/>
-      <img src={images.partner2} alt="partners"/>
-      <img src={images.partner3} alt="partners"/>
-      <img src={images.partner4} alt="partners"/>
-      <img src={images.partner5} alt="partners"/>
-      <img src={images.partner6} alt="partners"/>
-      <img src={images.partner7} alt="partners"/>
-      <img src={images.partner8} alt="partners"/>
+      <div className='hidden text-white text-center mt-8 '>Used by 20k+ businesses from small startups to household names</div>
+      <div className='hidden lg:flex lg:flex-row lg:space-x-4 lg:justify-center'>
+      <img src={images.partner}  alt="partners"  />
+      <img src={images.partner2} alt="partners"  />
+      <img src={images.partner3} alt="partners" />
+      <img src={images.partner4} alt="partners" />
+      <img src={images.partner5} alt="partners" />
+      <img src={images.partner6} alt="partners" />
+      <img src={images.partner7} alt="partners" />
+      <img src={images.partner8} alt="partners" />
         
       </div>    
     </div>

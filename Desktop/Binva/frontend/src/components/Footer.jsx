@@ -5,19 +5,19 @@ import { FaFacebook,  FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
 const Footer = () => {
   return (
     <section className='bg-black'>
-      <div><marquee className="text-white">..king david essentials</marquee></div>
+     
       <footer className='container mx-auto grid grid-cols-10 px-5 py-10 gap-y-10 gap-x-10 md:pt-20 md:grid-cols-12 lg:grid-cols-12'>
 
         
       <div className='col-span-5 md:col-span-4 lg:col-span-2'> 
-      <h3 className='text-gray-400 font-bold md:text-xl'>About Foundation</h3>
+      <h3 className='text-gray-400 font-bold md:text-xl'>About</h3>
       <ul className='text-green-500  mt-5 space-y-4 text-lg'>
         
           <li>
           <a href="/">About us</a> 
           </li>
           <li>
-          <a href="/"> Join mission</a> 
+          <a href="/">Register</a> 
           </li>
           
          
@@ -30,7 +30,7 @@ const Footer = () => {
           <a href="/"> Faq</a> 
           </li>
           <li>
-          <a href="/"> Volunteer</a> 
+          <a href="/"> Partner</a> 
           </li>
           <li>
           
@@ -38,10 +38,10 @@ const Footer = () => {
       </ul>
       </div>
       <div className='col-span-5 md:col-span-4 md:col-start-5 lg:col-span-2 '> 
-      <h3 className='text-gray-400 font-bold md:text-xl'>Giving</h3>
+      <h3 className='text-gray-400 font-bold md:text-xl'>Doc</h3>
       <ul className='text-green-500 text-lg mt-5 space-y-4'>
         <li>
-          <a href="/">Donate</a> 
+          <a href="/">Getting Started</a> 
           </li>
           <li>
           <a href="/"> Support</a> 
@@ -51,16 +51,16 @@ const Footer = () => {
       </ul>
       </div>
       <div className='col-span-5 md:col-span-4 lg:col-span-2'> 
-      <h3 className='text-gray-400 font-bold md:text-xl'>Articles</h3>
+      <h3 className='text-gray-400 font-bold md:text-xl'>Resources</h3>
       <ul className='text-green-500 text-lg mt-5 space-y-4'>
         <li>
-          <a href="/">Education</a> 
+          <a href="/">Integration</a> 
           </li>
           <li>
-          <a href="/">Outreach</a> 
+          <a href="/">Pricing</a> 
           </li>
           <li>
-          <a href="/"> more...</a> 
+          <a href="/">Buy us a coffee </a> 
           </li>
          
       </ul>
@@ -68,9 +68,9 @@ const Footer = () => {
       <div className='col-span-10 mt-4 md:order-first md:col-span-4 lg:col-span-4'>
         <div className=''>
         <div className='py-3'>
-          <img src={images.logo} className='w-20 lg:w-[120px]  lg:h-[120px] brightness-0 invert mx-auto md:mx-0' alt="logo-sm"/>
+          <img src={images.binva} className='w-20 lg:w-[120px]   brightness-0 invert mx-auto md:mx-0' alt="logo-sm"/>
         </div>
-        <p className='text-gray-300 text-sm text-center md:text-left md:text-base'>Driving positive change in the Niger Delta Region of Nigeria</p>
+        <p className='text-gray-300 text-sm text-center md:text-left md:text-base'>Make Secured Payments without glitches...</p>
         <div className='flex justify-center items-center text-gray-300 space-x-4 py-8 md:justify-start'>
           <a href="/" className='hover:text-teal-500 hover:animate-spin'><FaInstagram size={20}/></a>
         
