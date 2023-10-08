@@ -58,6 +58,6 @@ const createProduct = async () => {
 };
 
 // create user table for testing purposes
-createProduct();
+//createProduct();
 
 module.exports = { createProduct };
