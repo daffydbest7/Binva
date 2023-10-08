@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 const { createUsersAccount } = require("./config/db/queries/initialize-user-table");
 const { createTransactionTable} = require("./config/db/queries/initialize-transaction-table");
 const userRoutes = require("./routes/userRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 
 
@@ -22,6 +23,7 @@ app.get("/", (req,res)=>{
    
 //routes
 app.use("/api/v1", userRoutes);
+app.use("/api/v1", productRoutes);
 
 //tell if the server is running
 const PORT = process.env.PORT || 5000;
