@@ -12,7 +12,7 @@ import { authGuard, adminGuard } from "../middleware/authMiddleware.js";
 
 router.get("/getproducts", authGuard, getAllProduct);
 router.get("/getproduct/:merchantId", getAllProductByMerchantsId);
-router.get("/getproduct/:productId", getSingleProduct);
+router.get("/getspecificproduct/:productId", getSingleProduct);
 
 
 module.exports = router;
