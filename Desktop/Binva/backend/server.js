@@ -6,6 +6,7 @@ const { createUsersAccount } = require("./config/db/queries/initialize-user-tabl
 const { createTransactionTable} = require("./config/db/queries/initialize-transaction-table");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
+const predictRoutes = require("./routes/predictRoutes");
 
 
 
@@ -24,6 +25,7 @@ app.get("/", (req,res)=>{
 //routes
 app.use("/api/v1", userRoutes);
 app.use("/api/v1", productRoutes);
+app.use("/api/v1", predictRoutes);
 
 //tell if the server is running
 const PORT = process.env.PORT || 5000;
