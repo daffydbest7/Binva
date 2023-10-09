@@ -1,3 +1,4 @@
+require("dotenv").config();
 const axios = require('axios/dist/node/axios.cjs');
 
 const predict = async (req, res) =>{
@@ -6,32 +7,44 @@ const predict = async (req, res) =>{
     const ip = req.ip;
     const {bin}= req.body;
 
-    //check if 
+    
+
     const options = {
         method: 'POST',
         url: 'https://bin-ip-checker.p.rapidapi.com/',
         params: {
           bin: bin,
-          ip: ip
+          ip: '8.8.8.8'
         },
         headers: {
           'content-type': 'application/json',
-          'X-RapidAPI-Key': 'e186c30e35mshb50fb6c7970a270p168c19jsne58c092fb603',
-          'X-RapidAPI-Host': 'bin-ip-checker.p.rapidapi.com'
+          'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+          'X-RapidAPI-Host': process.env.RAPID_API_HOST,
         },
         data: {
           bin: bin,
-          ip: ip
+          ip: '8.8.8.8'
         }
       };
       
       try {
           const response = await axios.request(options);
-          console.log(response.data);
-          return res.status(201).json({
+          //check if ip and bin matches same country
+        
+          if(response.data.IP.IP_BIN_match){
+            console.log(response.data.IP.IP_BIN_match);
+            console.log(ip)
+            return res.status(201).json({
               status: "success",
               data: response.data,
             });
+          }else{
+            return res.status(201).json({
+                status: "success",
+                message: "Ip address doesn't match, possible fraud detected"
+              });
+          }
+          
       } catch (error) {
           console.error(error);
           res.status(500).json({
