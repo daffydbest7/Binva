@@ -12,7 +12,7 @@ const predict = async (req, res) =>{
 
     //query to insert into the transaction
     const transactionQuery = ` INSERT INTO transaction (
-        amount, user_id, merchant_id, isfraud
+        amount, user_id, merchant_id, isfruad
       ) VALUES (
         $1, $2, $3, $4
       ) RETURNING *; `
