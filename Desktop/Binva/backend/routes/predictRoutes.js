@@ -9,7 +9,7 @@ const router = express.Router();
 import { authGuard, adminGuard } from "../middleware/authMiddleware.js";
 
 
-router.post("/predict", predict);
+router.post("/predict",authGuard, predict);
 
 
 module.exports = router;
