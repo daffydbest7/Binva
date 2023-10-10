@@ -102,6 +102,21 @@ export const getAllTransactionByAdmin = async (token) => {
     throw new Error(error.message);
   }
 };
+
+//display live fraudlent transactions
+export const getAllFraudLive = async () => {
+  try {
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/gettransaction/fraud/live`
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
 export const getSinglePost = async ({id}) => {
   try {
     const { data } = await axios.get(

@@ -16,7 +16,7 @@ router.get("/gettransactions", authGuard, getAllTransaction);
 router.get("/gettransaction/merchant", authGuard, getAllTransactionByMerchantId);
 router.get("/gettransaction/fraud",authGuard, getAllFraudTransactionByMerchantId);
 router.get("/gettransaction/success",authGuard, getAllSuccessTransactionByMerchantId);
-router.get("/gettransaction/fraud/live", getAllSuccessTransactionByMerchantId);
+router.get("/gettransaction/fraud/live", getAllFraudTransactionLive);
 
 module.exports = router;
 
