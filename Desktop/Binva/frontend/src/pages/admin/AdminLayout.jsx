@@ -2,9 +2,10 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./components/header/Header";
 import { useQuery } from "@tanstack/react-query";
 import { getLoggedInUser } from "../../services/users";
-
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
+import MerchantHeader from "./components/header/MerchantHeader";
+import UserHeader from "./components/header/UserHeader";
 
 const AdminLayout = () => {
   const navigate = useNavigate();
@@ -39,7 +40,15 @@ const AdminLayout = () => {
 
   return (
     <div className="flex flex-col h-screen lg:flex-row">
-      <Header/>
+      {profileData.data?.admin && (
+         <Header/>
+      )}
+     {profileData.data?.merchant &&(
+      <MerchantHeader/>
+     )}
+      {!profileData.data?.merchant && !profileData.data?.admin &&(
+      <UserHeader/>
+     )}
       <main className="bg-[#F9F9F9] flex-1 p-4 lg:p-6">
        
         <div className="text-2xl font-bold">Hi, {profileData?.data?.firstname}</div>

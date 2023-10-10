@@ -9,7 +9,7 @@ const getAllTransaction = async (req, res) => {
     if ( !admin) {
       return res.status(403).json({
         status: "error",
-        error: "Only admin or Merchants users can access this resource",
+        error: "Only admin  users can access this resource",
       });
     }
     try {

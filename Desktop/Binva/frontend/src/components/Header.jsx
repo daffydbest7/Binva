@@ -133,7 +133,7 @@ const logoutHandler =()=>{
             <ul className='bg-black/80 lg:bg-transparent text-center flex flex-col shadow-lg rounded-lg overflow-hidden'>
                 {userState?.userInfo?.data?.admin && (
                         <button
-                          onClick={() => navigate("/admin")}
+                          onClick={() => navigate("/dashboard")}
                           type="button"
                           className="hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black"
                         >
@@ -142,7 +142,7 @@ const logoutHandler =()=>{
                       )}
                 {userState?.userInfo?.data?.merchant && (
                         <button
-                          onClick={() => navigate("/admin")}
+                          onClick={() => navigate("/dashboard")}
                           type="button"
                           className="hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black"
                         >
@@ -151,7 +151,7 @@ const logoutHandler =()=>{
                       )}
                  {!userState?.userInfo?.data?.merchant && !userState?.userInfo?.data?.admin && (
                         <button
-                          onClick={() => navigate("/admin")}
+                          onClick={() => navigate("/dashboard")}
                           type="button"
                           className="hover:bg-[#0000ff] hover:text-white px-4 py-2 text-white lg:text-black"
                         >
@@ -171,7 +171,7 @@ const logoutHandler =()=>{
       </div>) :
       (
         <button onClick={()=> navigate("/login")}
-        className='mt-5 lg:mt-0 border-2 border-eni_orange text-2xl px-6 py-2 rounded-full text-eni_orange font-semibold hover:bg-eni_orange hover:text-white transition-all duration-500'>SIGN IN</button>
+        className='mt-5 lg:mt-0 border-2 border-[#008000] text-2xl px-6 py-2 rounded-full text-black font-semibold hover:bg-[#008000] hover:text-white transition-all duration-500'>SIGN IN</button>
       )
       }
       

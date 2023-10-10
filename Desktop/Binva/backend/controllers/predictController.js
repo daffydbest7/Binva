@@ -44,14 +44,14 @@ const predict = async (req, res) =>{
           //check if ip and bin matches same country
         
           if(response.data.IP.IP_BIN_match){
-            const result = await db.query(transactionQuery, [1000, user.id, "947bb872-7358-405f-b980-de42b4e31bb5" , 'FALSE'])
+            const result = await db.query(transactionQuery, [1000, user.id, "57a26a6b-8d66-4890-b5fd-6964b5d8c997" , 'FALSE'])
             return res.status(201).json({
               status: "success",
               data: response.data,
               transaction: result.rows[0]
             });
           }else{
-            const result = await db.query(transactionQuery, [1000, user.id, "947bb872-7358-405f-b980-de42b4e31bb5" , 'TRUE'])
+            const result = await db.query(transactionQuery, [1000, user.id, "57a26a6b-8d66-4890-b5fd-6964b5d8c997" , 'TRUE'])
             return res.status(201).json({
                 status: "success",
                 message: "Ip address doesn't match, possible fraud detected",

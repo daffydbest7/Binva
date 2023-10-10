@@ -1,19 +1,16 @@
 import React from "react";
-import { BsCheckLg } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
-
-import { images, stables } from "../constants";
 import { Link } from "react-router-dom";
+import {AiOutlineVerified} from "react-icons/ai";
                                         
-const ArticleCard = ({ post, className }) => {
+const VendorCard = ({ vendor, className }) => {
   return (
     <div
     className={`rounded-xl overflow-hidden shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] ${className}`}
   >
-    <Link to={`/articles/${post.articleId}`}>
+    <Link to={`/articles/${vendor.id}`}>
       <img
         src={
-          post.image
+          vendor.avatar
            
         }
         alt="title"
@@ -21,18 +18,24 @@ const ArticleCard = ({ post, className }) => {
       />
     </Link>
     <div className="p-5">
-      <Link to={`/articles/${post.articleId}`}>
+      <Link to={`/articles/${vendor.id}`}>
         <h2 className="font-roboto font-bold text-xl text-dark-soft md:text-2xl lg:text-[28px]">
-          {post.title}
+          {vendor.firstname}
         </h2>  
       </Link>
       <div className="flex justify-between flex-nowrap items-center mt-6">
         
         <span className="font-bold text-dark-light italic text-sm md:text-base">
-          {new Date(post.createdOn).getDate()}{" "}
-          {new Date(post.createdOn).toLocaleString("default", {
+          <div className="flex flex-row items-center space-x-1">
+           <AiOutlineVerified className="text-green-600"/>
+            <p>Binva Verified Since: </p>
+            {new Date(vendor.created_on).getDate()}{ " "}
+            {new Date(vendor.created_on).toLocaleString("default", {
             month: "long",
           })}
+          </div>
+           
+        
         </span>
       </div>
     </div>
@@ -40,4 +43,4 @@ const ArticleCard = ({ post, className }) => {
   );
 };
 
-export default ArticleCard;
+export default VendorCard;

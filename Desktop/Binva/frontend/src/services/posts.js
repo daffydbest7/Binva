@@ -13,6 +13,34 @@ export const getAllPosts = async (searchKeyword = "", page = 1, limit = 10) => {
   }
 };
 
+//get all vendors
+export const getAllVendors = async () => {
+  try {
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/getmerchants/`
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
+//get all transaction as Merchant
+export const getAll = async () => {
+  try {
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/getmerchants/`
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
 export const getSinglePost = async ({id}) => {
   try {
     const { data } = await axios.get(

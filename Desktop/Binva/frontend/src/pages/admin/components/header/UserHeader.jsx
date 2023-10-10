@@ -3,7 +3,7 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import { images } from "../../../../constants";
 import { useEffect, useState } from "react";
 import { AiFillDashboard, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { FaComments } from "react-icons/fa";
+import {FaShoppingCart} from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import NavItem from "./NavItem";
 import NavItemCollapse from "./NavItemCollapse";
@@ -17,17 +17,18 @@ const MENU_ITEMS = [
     type: "link",
   },
   {
-    title: "Comments",
-    link: "/dashboard/comments",
-    icon: <FaComments className="text-xl" />,
-    name: "comments",
+    title: "Shop Now",
+    link: "/dashboard/shop",
+    icon: <FaShoppingCart className="text-xl" />,
+    name: "shop",
     type: "link",
   },
   {
-    title: "Posts",
+    title: "Profile",
     content: [
-      { title: "New", link: "/dashboard/posts/new" },
-      { title: "Manage", link: "/dashboard/posts/manage" },
+      { title: "Link Card", link: "#" },
+      { title: "edit", link: "#" },
+      { title: "enquiries", link: "/enquiry/faq" },
     ],
     icon: <MdDashboard className="text-xl" />,
     name: "posts",
@@ -35,7 +36,7 @@ const MENU_ITEMS = [
   },
 ];
 
-const Header = () => {
+const MerchantHeader = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [activeNavName, setActiveNavName] = useState("dashboard");
   const windowSize = useWindowSize();
@@ -77,7 +78,7 @@ const Header = () => {
           {/* sidebar */}
           <div className="fixed top-0 bottom-0 left-0 z-50 w-3/4 overflow-y-auto bg-white p-4 lg:static lg:h-full lg:w-full lg:p-6">
             <Link to="/">
-              <img src={images.logo} alt="logo" className="w-52" />
+              <img src={images.binva} alt="logo" className="w-52" />
             </Link>
             <h4 className="mt-10 font-bold text-[#C7C7C7]">MAIN MENU</h4>
             {/* menu items */}
@@ -113,4 +114,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MerchantHeader;

@@ -17,6 +17,7 @@ import ManagePosts from "./pages/admin/screens/posts/ManagePosts";
 import EditPost from "./pages/admin/screens/posts/EditPost";
 import ArticleDetailPage from './pages/articleDetail/ArticleDetailPage';
 import UploadImage from './pages/admin/screens/posts/uploadImage';
+import Shop from './pages/admin/screens/shop/Shop';
 
 function App() {
   return (
@@ -30,16 +31,16 @@ function App() {
         <Route index path="/enquiry/volunteer" element={ <VolunteerPage/>} />
         <Route index path="/article" element={ <ArticlePage/>} />
         <Route path="/login" element={<LoginPage/>}></Route>
-        <Route path="/eni-admin" element={<LoginPage />}> </Route>
-          <Route path ="/admin" element={<AdminLayout/>} >
+        <Route path ="/dashboard" element={<AdminLayout/>} >
           <Route index element={<Admin/>} />
           <Route path="comments" element={<Comments />} />
           <Route path="posts/new" element={<NewPost />} />
+          <Route path="shop" element={<Shop />} />
           <Route path="posts/manage" element={<ManagePosts />} />
           <Route path="posts/manage/edit/:id" element={<EditPost />} />
           <Route path="posts/manage/post" element={<UploadImage/>} />
         </Route>
-      
+        
       </Routes>
       <Toaster/>
     </div>

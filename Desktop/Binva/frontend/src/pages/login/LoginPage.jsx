@@ -30,7 +30,7 @@ const LoginPage = () => {
 
     useEffect(()=>{
         if(userState.userInfo){
-            navigate("/admin");
+            navigate("/dashboard");
         }
     }, [navigate,userState.userInfo])
 
@@ -53,10 +53,10 @@ const LoginPage = () => {
     }
   return (
    <MainLayout>
-    <section className='container mx-auto px-5 py-10'>
+    <section className='container mx-auto px-5 py-10 lg:mt-[100px]'>
         <div className='w-full max-w-sm mx-auto'>
-        <h1 className='text-4xl font-bold text-center text-black mb-8 shadow-lg'>
-            ADMIN LOGIN
+        <h1 className='text-4xl font-bold text-center text-black mb-8 '>
+            LOGIN
         </h1>
         <form onSubmit={handleSubmit(submitHandler)}>
             <div className='flex flex-col mb-6 w-full'>
@@ -99,13 +99,13 @@ const LoginPage = () => {
                 <p className='text-red-500 text-xs mt-1'> {errors?.password.message}</p>
             ) }
           
-            <Link to="/forgot-password" className='text-eni_orange mt-3 font-semibold'>
+            <Link to="/forgot-password" className='text-[#0000ff] mt-3 font-semibold'>
                 Forgot Password?
             </Link>
 
             <button  type="submit" disabled={!isValid || isLoading}
             id='submit' 
-            className=' bg-eni_orange text-white text-2xl mt-3 rounded-lg px-5 py-4 font-semibold block outline-none border border-[#c3cad] my-6 disabled:opacity-70 disabled:cursor-not-allowed'>Sign In</button>
+            className=' bg-[#008000] text-white text-2xl mt-3 rounded-lg px-5 py-4 font-semibold block outline-none border border-[#c3cad] my-6 disabled:opacity-70 disabled:cursor-not-allowed'>Sign In</button>
            
             </div>
         </form>
