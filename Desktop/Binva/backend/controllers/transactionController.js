@@ -112,7 +112,7 @@ const getAllSuccessTransactionByMerchantId = async (req, res) => {
 const getAllFraudTransactionLive = async (req, res) => {
   
   try {
-    const result = await db.query(`SELECT * FROM transaction WHERE isfruad='TRUE'`);
+    const result = await db.query(`SELECT * FROM transaction WHERE isfruad='TRUE' ORDER BY date DESC`);
     return res.status(201).json({
       status: "success",
       data: result.rows,
