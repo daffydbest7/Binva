@@ -27,11 +27,16 @@ export const getAllVendors = async () => {
   }
 };
 
-//get all transaction as Merchant
-export const getAll = async () => {
+//get all transaction as Merchant (Both Fraud and not fraud)
+export const getAllTransactionByMerchantId = async (token) => {
   try {
+    const config = {
+      headers: {
+          Authorization: `Bearer ${token}`,   
+      },
+  }
     const { data, headers } = await axios.get(
-      `https://binva.onrender.com/api/v1/getmerchants/`
+      `https://binva.onrender.com/api/v1/gettransaction/merchant`,config
     );
     return { data, headers };
   } catch (error) {
@@ -41,6 +46,62 @@ export const getAll = async () => {
   }
 };
 
+//get all fraudulent transactions as Merchant
+export const getAllFraudTransactionByMerchantId = async (token) => {
+  try {
+    const config = {
+      headers: {
+          Authorization: `Bearer ${token}`,   
+      },
+  }
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/gettransaction/fraud`,config
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
+//get all Successful transactions as Merchant
+export const getAllSuccessTransactionByMerchantId = async (token) => {
+  try {
+    const config = {
+      headers: {
+          Authorization: `Bearer ${token}`,   
+      },
+  }
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/gettransaction/success`,config
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
+//get all transaction as Admin (Both Fraud and not fraud as well as all merchants)
+export const getAllTransactionByAdmin = async (token) => {
+  try {
+    const config = {
+      headers: {
+          Authorization: `Bearer ${token}`,   
+      },
+  }
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/gettransactions`,config
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
 export const getSinglePost = async ({id}) => {
   try {
     const { data } = await axios.get(

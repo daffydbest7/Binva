@@ -18,6 +18,7 @@ import marian from "../assets/posts/marian.jpg";
 import ifeanyi from "../assets/posts/ifeanyi.jpg";
 import nabena from "../assets/posts/victor.jpg";
 import binva from "../assets/binva.png";
+import dollar from "../assets/dollar.png";
 
 
 
@@ -26,6 +27,7 @@ const images = {
      david,doubra,marian,victor,ifeanyi,nabena,binva, binva_banner1
      ,binva_banner2,binva_banner3,binva_banner4,banner,
      partner,partner2,partner3,partner4,partner5,partner6,partner7,partner8,
+     dollar
    
 }
 

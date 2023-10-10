@@ -2,7 +2,8 @@ import React from "react";
 import { useQuery,useMutation, useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllPosts, deletePost } from "../../../../services/posts";
+import { images } from "../../../../constants";
+import { deletePost,getAllTransactionByAdmin } from "../../../../services/posts";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
@@ -14,12 +15,13 @@ import { toast } from "react-hot-toast";
 
 let isFirstRun = true;
 
-const ManagePosts = () => {
+const AllTransactionAsAdmin = () => {
   const queryClient = useQueryClient(); 
   const navigate = useNavigate();
   const userState = useSelector((state)=> state.user);
+  const token = userState.userInfo?.data?.token;
   const { data, isLoading, isError, refetch } = useQuery({
-    queryFn: () => getAllPosts(),
+    queryFn: () => getAllTransactionByAdmin(token),
     queryKey: ["articles"],
     
     onError: (error) => {
@@ -29,7 +31,7 @@ const ManagePosts = () => {
     
   }
   );
-  const token = userState.userInfo?.data?.token;
+ 
  
 
   //delete post function
@@ -61,7 +63,7 @@ useEffect(() => {
 
   
 const deletePostHandler = ({ articleId, token }) => {
-  const userResponse = window.confirm("Are you sure you want to delete this post? this action is not reversible!\nEither OK or Cancel.");
+  const userResponse = window.confirm("Are you sure you want to delete this transaction record? this action is not reversible!\nEither OK or Cancel.");
   if(userResponse === true ){
     mutateDeletePost({ articleId, token });
   }
@@ -72,7 +74,7 @@ const deletePostHandler = ({ articleId, token }) => {
 
 
   return <div>
-      <div>MANAGE POSTS</div>
+      <div>ALL TRANSACTIONS</div>
 
       {/** table component */}
       
@@ -83,48 +85,53 @@ const deletePostHandler = ({ articleId, token }) => {
                     <table className="min-w-max w-full table-auto">
                         <thead>
                             <tr className="bg-gray-200 text-gray-600 uppercase text-2xl leading-normal">
-                                <th className="py-3 px-6 text-left">Post Title</th>
-                                <th className="py-3 px-6 text-left">Image</th>
-                              
-                                <th className="py-3 px-6 text-center">Actions</th>
+                                <th className="py-3 px-6 text-left">AMOUNT</th>
+                                <th className="py-3 px-6 text-left">STATUS</th>
+                  
+                                <th className="py-3 px-6 text-center">ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody className="text-black text-xl font-light">
-                          {data?.data?.data.map((posts)=>
+                          {data?.data?.data.map((transaction)=>
                             
-                           <tr key={posts.articleId} className="border-b border-gray-200 hover:bg-gray-100">
+                           <tr key={transaction.id} className="border-b border-gray-200 hover:bg-gray-100">
                          
                            <td className="py-3 px-6 text-left">
                                <div className="flex items-center">
                                    <div className="mr-2">
-                                       <img className="w-6 h-6 rounded-full" src={posts.image}/>
+                                       <img className="w-6 h-6 rounded-full" src={images.dollar}/>
                                    </div>
-                                   <span> {posts.title} </span>
+                                   <span> {transaction.amount} </span>
+                                   
                                </div>
                            </td>
-                           <td className="py-3 px-6 text-center">
-                               <div className="flex items-center justify-center">
-                                   <img className="w-6 h-6 rounded-full border-gray-200 border transform hover:scale-125" src={posts.image}/>
+                           <td className="py-3  text-center">
+                               <div className="flex items-center justify-center text-black">
+                               <span>{transaction.isfruad &&
+                                   <span className="text-red-700 font-bold italic">FRAUD</span> }
+                                   {!transaction.isfruad && <span className="text-green-700 font-roboto font-bold">
+                                    SUCCESSFUL
+                                    </span>}</span>
                                   
                                </div>
                            </td>
                           
                            <td className="py-3 px-6 text-center text-2xl">
                                <div className="flex item-center justify-center">
-                                   <div onClick={()=> navigate(`/articles/${posts.articleId}`)} className="w-4 mr-2 transform hover:text-eni_orange hover:scale-120">
+                                   <div onClick={()=> navigate(`/articles/${transaction.articleId}`)} className="w-4 mr-2 transform hover:text-eni_orange hover:scale-120">
                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                        </svg>
                                    </div>
-                                   <div onClick={()=> navigate(`edit/${posts.articleId}`)} className="w-4 mr-2 transform hover:text-green-500 hover:scale-120">
+                                   <div onClick={()=> navigate(`edit/${transaction.articleId}`)} className="w-4 mr-2 transform hover:text-green-500 hover:scale-120">
                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                        </svg>
                                    </div>
                                    <div  onClick={() => {
                               deletePostHandler({
-                                articleId: posts.articleId,
+                                articleId: transaction.articleId,
                                 token: token,
                                 
                               });
@@ -150,4 +157,4 @@ const deletePostHandler = ({ articleId, token }) => {
     </div>
 };
 
-export default ManagePosts;
+export default AllTransactionAsAdmin;

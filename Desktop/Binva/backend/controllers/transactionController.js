@@ -108,11 +108,29 @@ const getAllSuccessTransactionByMerchantId = async (req, res) => {
   }
 };  
 
+// display live fraud alerts on general dashboard in realtime
+const getAllFraudTransactionLive = async (req, res) => {
+  
+  try {
+    const result = await db.query(`SELECT * FROM transaction WHERE isfruad='TRUE'`);
+    return res.status(201).json({
+      status: "success",
+      data: result.rows,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      status: "error",
+      error: "An error occurred while fetching fraudulent transactions",
+    });
+  }
+}; 
 
 
 
 module.exports = { getAllTransaction,
   getAllTransactionByMerchantId,
   getAllFraudTransactionByMerchantId,
-  getAllSuccessTransactionByMerchantId 
+  getAllSuccessTransactionByMerchantId,
+  getAllFraudTransactionLive 
  };  

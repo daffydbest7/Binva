@@ -19,7 +19,7 @@ const MENU_ITEMS = [
     title: "Transactions",
     content: [
       { title: "All", link: "/dashboard/transaction/all" },
-      { title: "Successful", link: "/dashboard/transaction/sucess" },
+      { title: "Successful", link: "/dashboard/transaction/success" },
       { title: "Fraud", link: "/dashboard/transaction/fraud" },
     ],
     icon: <MdDashboard className="text-xl" />,

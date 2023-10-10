@@ -5,7 +5,8 @@ import {
   getAllFraudTransactionByMerchantId,
   getAllTransaction,
   getAllTransactionByMerchantId,
-  getAllSuccessTransactionByMerchantId
+  getAllSuccessTransactionByMerchantId,
+  getAllFraudTransactionLive
   
 } from "../controllers/transactionController.js";
 const router = express.Router();
@@ -15,7 +16,7 @@ router.get("/gettransactions", authGuard, getAllTransaction);
 router.get("/gettransaction/merchant", authGuard, getAllTransactionByMerchantId);
 router.get("/gettransaction/fraud",authGuard, getAllFraudTransactionByMerchantId);
 router.get("/gettransaction/success",authGuard, getAllSuccessTransactionByMerchantId);
-
+router.get("/gettransaction/fraud/live", getAllSuccessTransactionByMerchantId);
 
 module.exports = router;
 

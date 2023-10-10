@@ -18,6 +18,10 @@ import EditPost from "./pages/admin/screens/posts/EditPost";
 import ArticleDetailPage from './pages/articleDetail/ArticleDetailPage';
 import UploadImage from './pages/admin/screens/posts/uploadImage';
 import Shop from './pages/admin/screens/shop/Shop';
+import AllTransaction from './pages/admin/screens/transactions/AllTransaction';
+import FraudTransaction from './pages/admin/screens/transactions/FraudTransaction';
+import SuccessTransaction from './pages/admin/screens/transactions/SuccessTransaction';
+import AllTransactionAsAdmin from './pages/admin/screens/transactions/AllTransactionAsAdmin';
 
 function App() {
   return (
@@ -36,6 +40,10 @@ function App() {
           <Route path="comments" element={<Comments />} />
           <Route path="posts/new" element={<NewPost />} />
           <Route path="shop" element={<Shop />} />
+          <Route path="transaction/all" element={<AllTransaction/>} />
+          <Route path="admin/transactions" element={<AllTransactionAsAdmin/>} />
+          <Route path="transaction/fraud" element={<FraudTransaction/>} />
+          <Route path="transaction/success" element={<SuccessTransaction/>} />
           <Route path="posts/manage" element={<ManagePosts />} />
           <Route path="posts/manage/edit/:id" element={<EditPost />} />
           <Route path="posts/manage/post" element={<UploadImage/>} />
