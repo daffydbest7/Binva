@@ -1,3 +1,4 @@
+const db = require("../config/db/db");
 require("dotenv").config();
 const axios = require('axios/dist/node/axios.cjs');
 
@@ -5,10 +6,21 @@ const predict = async (req, res) =>{
 
     // get the users ip address and bank identification number
     const ip = req.ip;
+    const user = req.user;
+    const productId = req.params.productId;
     const {bin}= req.body;
 
+    //query to insert into the transaction
+    const transactionQuery = ` INSERT INTO transaction (
+        amount, user_id, merchant_id, isfraud
+      ) VALUES (
+        $1, $2, $3, $4
+      ) RETURNING *; `
     
-
+    // values
+    //const isfraud = false;
+    //const values = [1000, user.id, "145", isfraud ];
+    
     const options = {
         method: 'POST',
         url: 'https://bin-ip-checker.p.rapidapi.com/',
@@ -32,13 +44,14 @@ const predict = async (req, res) =>{
           //check if ip and bin matches same country
         
           if(response.data.IP.IP_BIN_match){
-            console.log(response.data.IP.IP_BIN_match);
-            console.log(ip)
+            const result = await db.query(transactionQuery, [1000, user.id, "123" , 'FALSE'])
             return res.status(201).json({
               status: "success",
               data: response.data,
+              transaction: result.rows[0]
             });
           }else{
+            const result = await db.query(transactionQuery, [1000, user.id, "123" , 'TRUE'])
             return res.status(201).json({
                 status: "success",
                 message: "Ip address doesn't match, possible fraud detected",

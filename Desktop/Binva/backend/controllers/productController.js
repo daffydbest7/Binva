@@ -1,14 +1,6 @@
 const db = require("../config/db/db");
 require("dotenv").config();
 
-
-
-
-
-
-
-
-
 // get all Products
 const getAllProduct = async (req, res) => {
     const admin = req.user?.admin;

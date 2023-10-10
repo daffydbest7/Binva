@@ -11,8 +11,9 @@ const createTransactionTable = async () => {
       id uuid DEFAULT uuid_generate_v4(),
       amount INT NOT NULL,
       user_id uuid,
+      merchant_id uuid,
+      isfruad BOOLEAN,
       date TIMESTAMP DEFAULT NOW(),
-      updated_on TIMESTAMP DEFAULT NOW(),
       PRIMARY KEY (id)
     );
   `;
