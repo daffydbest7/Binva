@@ -14,7 +14,7 @@ const predict = async (req, res) =>{
         url: 'https://bin-ip-checker.p.rapidapi.com/',
         params: {
           bin: bin,
-          ip: '8.8.8.8'
+          ip: ip
         },
         headers: {
           'content-type': 'application/json',
@@ -23,7 +23,7 @@ const predict = async (req, res) =>{
         },
         data: {
           bin: bin,
-          ip: '8.8.8.8'
+          ip: ip
         }
       };
       
