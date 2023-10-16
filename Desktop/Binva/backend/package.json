@@ -1,6 +1,12 @@
 {
   "name": "binva",
   "version": "1.0.0",
+
+  "engines": {
+    "node": ">=16.14",
+    "npm": "8.x"
+  },
+  
   "description": "Fraud detection application for financial institution",
   "main": "server.js",
   "dependencies": {
