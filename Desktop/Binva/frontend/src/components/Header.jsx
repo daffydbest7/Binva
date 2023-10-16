@@ -90,7 +90,7 @@ const logoutHandler =()=>{
 }
 
   return (
-    <section className='sticky top-0 left-0 z-50  bg-[#e9e4e4]'>
+    <section className='sticky top-0 left-0 z-50  bg-[#e9e4e4] lg:pb-6'>
       <marquee className="ml-[200px] mr-[200px]">
       <div className='container  hidden lg:flex lg:flex-row items-center space-x-2'> 
         <span> <AiOutlinePhone size={20}/> </span>
@@ -100,7 +100,7 @@ const logoutHandler =()=>{
       
     <div className='container mx-auto px-5 flex justify-between lg:justify-evenly items-center'>
     <Link to="/">
-      <img className='w-32 md:w-32 ' src={images.binva} alt="logo"/>
+      <img className='w-32 md:w-32 lg:w-60' src={images.binva} alt="logo"/>
 
     </Link>
     {/** hamburger icons */}
@@ -171,7 +171,7 @@ const logoutHandler =()=>{
       </div>) :
       (
         <button onClick={()=> navigate("/login")}
-        className='mt-5 lg:mt-0 border-2 border-[#008000] text-2xl px-6 py-2 rounded-full text-black font-semibold hover:bg-[#008000] hover:text-white transition-all duration-500'>SIGN IN</button>
+        className='mt-5 lg:mt-0 border-2 border-[#008000] text-2xl px-6 py-2 rounded-full text-white lg:text-black font-semibold hover:bg-[#008000] hover:text-white transition-all duration-500'>SIGN IN</button>
       )
       }
       

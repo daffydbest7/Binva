@@ -1,49 +1,46 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import VendorCard from "../../../../components/VendorCard";
+import { useParams } from "react-router-dom";
+import ProductCard from "../../../../components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
-import { getAllVendors } from "../../../../services/posts";
+import { getAllProductByMerchantId } from "../../../../services/posts";
 import { toast } from "react-hot-toast";
-import VendorCardSkeleton from "../../../../components/VendorCardSkeleton";
+import ProductCardSkeleton from "../../../../components/ProductCardSkeleton";
 import ErrorMessage from "../../../../components/ErrorMessage";
 
-import { Link } from "react-router-dom";
-
-
-const Shop = () => {
-  
+const Product = () => {
+  const { id } = useParams();
   const { data, isLoading, isError } = useQuery({
-    queryFn: () => getAllVendors(),
-    queryKey: ["vendors"],
+    queryFn: () => getAllProductByMerchantId({ id }),
+    queryKey: ["product", id ],
     onError: (error) => {
       toast.error(error.message);
       console.log(error);
+      console.log(id)
     },
   });
 
   return (
     <div className="lg:mt-[50px]">
       <div className="container mx-auto text-center text-2xl font-bold mb-4">
-        SELECT FROM OUR TOP RATED FINTECHS, MERCHANTS AND VENDORS
+        AVAILABLE PRODUCTS AND SERVICES
       </div>
        <section className="flex flex-col container mx-auto px-5 py-10">
       <div className=" flex flex-wrap md:gap-x-5 gap-y-5 pb-10">
         {isLoading ? (
-          [...Array(3)].map((item, index) => (
-            <VendorCardSkeleton
+          [...Array(5)].map((item, index) => (
+            <ProductCardSkeleton
               key={index}
               className="w-full lg:w-[calc(24.5%-15px)] md:w-[calc(33.33%-21px)]"
               
             />
           ))
         ) : isError ? (
-          <ErrorMessage message="Couldn't fetch the vendor data" />
+          <ErrorMessage message="Couldn't fetch the this merchants services" />
         ) : (
           data?.data?.data.map((post) => (
-            <VendorCard
+            <ProductCard
               key={post.id}
-              vendor={post}
+              product={post}
               className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]"
             />
 
@@ -60,5 +57,5 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Product;
 

@@ -53,7 +53,7 @@ const AdminLayout = () => {
   }
 
   return (
-    <div className="flex flex-col h-screen lg:flex-row">
+    <div className="flex flex-col  lg:flex-row">
       {profileData.data?.admin && (
          <Header/>
       )}
@@ -61,17 +61,17 @@ const AdminLayout = () => {
       <MerchantHeader/>
      )}
       {!profileData.data?.merchant && !profileData.data?.admin &&(
-      <UserHeader/>
+      <UserHeader />
      )}
-      <main className="bg-[#F9F9F9] flex-1 p-4 lg:p-6">
+      <main className="bg-[#F9F9F9] flex-1 p-4 lg:p-6 ">
        
         <div className="text-2xl font-bold">Hi, {profileData?.data?.firstname}</div>
-       <div className=" bg-gray-500 p-2 rounded-lg">
+       <div className=" bg-gray-200 p-2 rounded-lg">
         <span className="bg-green-700 text-white font-bold font-roboto border border-green-700 p-2 rounded"> FRAUD DETECTION IN REAL TIME </span>
        <marquee className="">
        <div className="flex flex-row space-x-8 mt-2"> 
         {liveFraudData.data?.data?.slice(0,5).map((fraud)=> 
-          <div key={fraud.id} className="text-red-700 flex flex-row">
+          <div key={fraud.id} className="text-red-700 flex flex-row font-xl font-bold">
             
             <div className="">${fraud.amount}</div>
             <div className="ml-2">{fraud.user_id}</div>

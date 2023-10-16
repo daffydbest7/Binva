@@ -56,7 +56,7 @@ const ContactPage = () => {
           </form>
         </div>
         <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-          <p className='text-center mb-12'>Thank you for your interest in Enibo Albert Charity Foundation's mission. To learn more about how you can support our initiatives aligned with the SDGs in the Niger Delta Region, please connect with us:</p>
+          <p className='text-center mb-12'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi officiis eveniet distinctio harum perferendis labore? Nam quis, itaque exercitationem ipsum molestiae earum distinctio voluptatibus iusto quam tenetur aliquam officia dignissimos?</p>
           <div className="flex flex-wrap">
             <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
               <div className="flex items-start">
@@ -71,11 +71,11 @@ const ContactPage = () => {
                 </div>
                 <div className="ml-6 grow">
                   <p className="mb-2 font-bold dark:text-white">
-                    Speak with Enibo directly
+                    Speak with binva irectly
                   </p>
                   
                   <p className="text-neutral-500 dark:text-neutral-200">
-                  +234-9036396431
+                  +234-8132225549
                   </p>
                 </div>
               </div>
@@ -92,7 +92,7 @@ const ContactPage = () => {
                     Email
                   </p>
                   <p className="text-neutral-500 dark:text-neutral-200">
-                  <a href='mailto:eniboalbertcharityfoundation@gmail.com' target='_blank'> eniboalbertcharityfoundation@gmail.com </a>
+                  <a href='mailto:eniboalbertcharityfoundation@gmail.com' target='_blank'> lorem jdjhdfuihcvd </a>
                   </p>
                  
                 </div>
@@ -109,7 +109,7 @@ const ContactPage = () => {
                 <div className="ml-6 grow">
                   <p className="mb-2 font-bold dark:text-white">LinkedIn</p>
                   <p className="text-neutral-500 dark:text-neutral-200">
-                    <a href='https://www.linkedin.com/Enibo Albert Charity Foundation' target='_blank'>Enibo Albert Charity Foundation </a>
+                    <a href='https://www.linkedin.com/Enibo Albert Charity Foundation' target='_blank'>lorem dbjdsjchsndjcsnjdcd </a>
                   </p>
                 </div>
               </div>
@@ -124,7 +124,7 @@ const ContactPage = () => {
                 <div className="ml-6 grow">
                   <p className="mb-2 font-bold dark:text-white">Facebook</p>
                   <p className="text-neutral-500 dark:text-neutral-200">
-                  <a href='https://www.facebook.com/Enibo Albert Charity Foundation' target='_blank'> Enibo Albert Charity Foundation</a>
+                  <a href='https://www.facebook.com/Enibo Albert Charity Foundation' target='_blank'> lorem bfhvjfbdh</a>
                   </p>
                   
                 </div>
@@ -140,7 +140,7 @@ const ContactPage = () => {
                 <div className="ml-6 grow">
                   <p className="mb-2 font-bold dark:text-white">Instagram</p>
                   <p className="text-neutral-500 dark:text-neutral-200">
-                 <a href='https://www.instagram.com/@eniboalbertcharityfoundation' target='_blank'>@eniboalbertcharityfoundation</a> 
+                 <a href='https://www.instagram.com/@eniboalbertcharityfoundation' target='_blank'>lorem jfdjhdjhdifd</a> 
                   </p>
                   
                 </div>
@@ -156,7 +156,7 @@ const ContactPage = () => {
                 <div className="ml-6 grow">
                   <p className="mb-2 font-bold dark:text-white">Twitter</p>
                   <p className="text-neutral-500 dark:text-neutral-200">
-                  <a href='https://www.twitter.com/@EniboAlbertCFDN' target='_blank'>@EniboAlbertCFDN </a>
+                  <a href='https://www.twitter.com/@EniboAlbertCFDN' target='_blank'>lorem fhhjhdfhcv </a>
                   </p>
                   
                 </div>

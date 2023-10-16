@@ -56,7 +56,7 @@ const FaqPage = () => {
         </div>
 
         <div>
-          <img src={images.enibobanner}
+          <img src={images.banner}
             className="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
         </div>
       </div>

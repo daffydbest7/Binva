@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import {Routes, Route } from "react-router-dom";
 import './App.css';
 import LandingPage from './pages/home/LandingPage';
-import LoginPage from './pages/login/LoginPage';
+import LoginPageV2 from './pages/login/LoginPageV2';
 import AboutPage from './pages/about/AboutPage';
 import VolunteerPage from './pages/volunteer/VolunteerPage';
 import FaqPage from './pages/faq/FaqPage';
@@ -22,6 +22,8 @@ import AllTransaction from './pages/admin/screens/transactions/AllTransaction';
 import FraudTransaction from './pages/admin/screens/transactions/FraudTransaction';
 import SuccessTransaction from './pages/admin/screens/transactions/SuccessTransaction';
 import AllTransactionAsAdmin from './pages/admin/screens/transactions/AllTransactionAsAdmin';
+import Product from './pages/admin/screens/shop/Product';
+import Payment from './pages/admin/screens/shop/Payment';
 
 function App() {
   return (
@@ -34,12 +36,14 @@ function App() {
         <Route index path="/contact" element={ <ContactPage/>} />
         <Route index path="/enquiry/volunteer" element={ <VolunteerPage/>} />
         <Route index path="/article" element={ <ArticlePage/>} />
-        <Route path="/login" element={<LoginPage/>}></Route>
+        <Route path="/login" element={<LoginPageV2/>}></Route>
         <Route path ="/dashboard" element={<AdminLayout/>} >
           <Route index element={<Admin/>} />
           <Route path="comments" element={<Comments />} />
           <Route path="posts/new" element={<NewPost />} />
-          <Route path="shop" element={<Shop />} />
+          <Route path="shop" element={<Shop />}/>
+          <Route path="shop/product/:id" element={<Product/>} />
+          <Route path="shop/product/payment/:id" element={<Payment/>} />
           <Route path="transaction/all" element={<AllTransaction/>} />
           <Route path="admin/transactions" element={<AllTransactionAsAdmin/>} />
           <Route path="transaction/fraud" element={<FraudTransaction/>} />

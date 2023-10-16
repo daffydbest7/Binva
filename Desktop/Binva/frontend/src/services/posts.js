@@ -117,6 +117,36 @@ export const getAllFraudLive = async () => {
   }
 };
 
+//get all Products of Merchant 
+export const getAllProductByMerchantId = async ({ id }) => {
+  try {
+  
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/getproduct/${id}`
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
+//get all specific product for payment purpose
+export const getSingleProduct = async ({ id }) => {
+  try {
+  
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/getspecificproduct/${id}`
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
 export const getSinglePost = async ({id}) => {
   try {
     const { data } = await axios.get(

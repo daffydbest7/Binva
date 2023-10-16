@@ -10,14 +10,14 @@ const VolunteerPage = () => {
   
   <section className="mb-32">
     <h2 className="mb-12 text-center text-3xl font-bold">
-      WHY YOU SHOULD BECOME A VOLUNTEER ?
+      WHY YOU SHOULD BECOME A PARTNER ?
     </h2>
 
     <div className="flex flex-wrap items-center">
       <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-6 lg:mb-0 lg:w-5/12">
         <div className="relative overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat shadow-lg dark:shadow-black/20"
           data-te-ripple-init data-te-ripple-color="light">
-          <img src={images.eniboVolunteer} alt="volunteer" className="w-full" />
+          <img src={images.binva_banner4} alt="volunteer" className="w-full" />
         
         </div>
       </div>
@@ -36,7 +36,7 @@ const VolunteerPage = () => {
           <div className="ml-4 grow">
             <p className="mb-1 font-bold">We need you</p>
             <p className="text-neutral-500 dark:text-neutral-300">
-            We invite you to join hands with Enibo Albert Charity Foundation in this vital mission:
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem assumenda vero sed, saepe ullam excepturi laboriosam expedita fugit velit magni magnam illum facilis et natus laborum odit voluptas minima laudantium.
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ const VolunteerPage = () => {
           <div className="ml-4 grow">
             <p className="mb-1 font-bold">Contribute To Community</p>
             <p className="text-neutral-500 dark:text-neutral-300">
-            Your contributions, whether financial or in-kind, can directly impact lives.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, eveniet, commodi optio quisquam recusandae neque voluptatem eos, quod illo explicabo ducimus. Corporis nemo atque obcaecati incidunt aut est id velit.
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ const VolunteerPage = () => {
           <div className="ml-4 grow">
             <p className="mb-1 font-bold">Build</p>
             <p className="text-neutral-500 dark:text-neutral-300">
-            Together, we can build a Niger Delta where poverty, hunger, and inadequate resources are relics of the past.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione provident hic placeat eligendi laborum nobis quasi eaque debitis autem ipsam suscipit, explicabo maiores magnam, dolores a eos asperiores necessitatibus reprehenderit.
             </p>
           </div>
         </div>
