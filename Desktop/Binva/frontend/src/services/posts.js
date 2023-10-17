@@ -148,7 +148,7 @@ export const getSingleProduct = async ({ id }) => {
 };
 
 //get Ip details for fraud assumptions
-export const getIp = async ({ ip,token }) => {
+export const getIp = async (token) => {
   try {
     const config = {
       headers: {
@@ -156,7 +156,7 @@ export const getIp = async ({ ip,token }) => {
       },
   }
     const { data, headers } = await axios.get(
-      `https://binva.onrender.com/api/v1/detect/`,config
+      `https://binva.onrender.com/api/v1/detect/`, config
     );
     return { data, headers };
   } catch (error) {

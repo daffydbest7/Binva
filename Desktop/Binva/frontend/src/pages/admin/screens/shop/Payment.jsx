@@ -1,23 +1,24 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import ProductCard from "../../../../components/ProductCard";
+import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import { getSingleProduct,getIp} from "../../../../services/posts";
 import { toast } from "react-hot-toast";
-import ProductCardSkeleton from "../../../../components/ProductCardSkeleton";
 import ErrorMessage from "../../../../components/ErrorMessage";
 import { images } from "../../../../constants";
 import {AiFillSecurityScan} from "react-icons/ai";
 
 const Payment = () => {
   const { id } = useParams();
+  const userState = useSelector((state)=> state.user);
+  const token = userState.userInfo?.data?.token;
   const { data:IpData} = useQuery({
-    queryFn: () => getIp(),
+    queryFn: () => getIp(token),
     queryKey: ["getip"],
     onError: (error) => {
       toast.error(error.message);
       console.log(error);
-     console.log(IpData.data?.ip)
+     
     },
   })
 
@@ -30,7 +31,7 @@ const Payment = () => {
      // console.log(id)
     },
   });
-
+{ console.log(IpData?.data)}
   return (
     <div classNameNameName="lg:mt-[50px]">
       <div classNameNameName="container mx-auto text-center text-2xl font-bold mb-4">
