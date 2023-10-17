@@ -148,7 +148,7 @@ export const getSingleProduct = async ({ id }) => {
 };
 
 //get Ip details for fraud assumptions
-export const getIp = async ({ ip }) => {
+export const getIp = async ({ ip,token }) => {
   try {
     const config = {
       headers: {
