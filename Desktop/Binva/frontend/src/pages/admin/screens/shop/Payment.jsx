@@ -31,7 +31,9 @@ const Payment = () => {
      // console.log(id)
     },
   });
-{ console.log(IpData?.data)}
+{ console.log(IpData?.data?.message)
+    toast.error(IpData?.data?.message)
+}
   return (
     <div classNameNameName="lg:mt-[50px]">
       <div classNameNameName="container mx-auto text-center text-2xl font-bold mb-4">
