@@ -147,6 +147,21 @@ export const getSingleProduct = async ({ id }) => {
   }
 };
 
+//get Ip details for fraud assumptions
+export const getIp = async ({ ip }) => {
+  try {
+  
+    const { data, headers } = await axios.get(
+      `https://binva.onrender.com/api/v1/detect/`
+    );
+    return { data, headers };
+  } catch (error) {
+    if (error.response && error.response.data.message)
+      throw new Error(error.response.data.message);
+    throw new Error(error.message);
+  }
+};
+
 export const getSinglePost = async ({id}) => {
   try {
     const { data } = await axios.get(

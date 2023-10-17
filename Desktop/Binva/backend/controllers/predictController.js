@@ -117,7 +117,8 @@ const predictByIp = async (req, res) =>{
           return res.status(201).json({
               status: "success",
               message: "Ip address doesn't match, possible fraud detected",
-              ip: response.data.IP
+              ip: response.data.IP,
+              continent_code:response.continent_code
             });
         }
         
