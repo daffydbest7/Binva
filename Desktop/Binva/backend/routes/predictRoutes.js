@@ -11,7 +11,7 @@ import { authGuard, adminGuard } from "../middleware/authMiddleware.js";
 
 
 router.post("/predict",authGuard, predict);
-router.post("/detect",authGuard, predictByIp);
+router.get("/detect",authGuard, predictByIp);
 
 
 module.exports = router;
