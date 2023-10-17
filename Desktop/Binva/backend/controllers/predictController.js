@@ -84,9 +84,7 @@ const predictByIp = async (req, res) =>{
       $1, $2, $3, $4
     ) RETURNING *; `
   
-  // values
-  //const isfraud = false;
-  //const values = [1000, user.id, "145", isfraud ];
+ 
   
   const options = {
     method: 'GET',
@@ -106,19 +104,19 @@ const predictByIp = async (req, res) =>{
         //check if ip and bin matches same country
       
         if(response.continent_code==="AF"){
-          const result = await db.query(transactionQuery, [1000, user.id, "57a26a6b-8d66-4890-b5fd-6964b5d8c997" , 'FALSE'])
+         // const result = await db.query(transactionQuery, [1000, user.id, "57a26a6b-8d66-4890-b5fd-6964b5d8c997" , 'FALSE'])
           return res.status(201).json({
             status: "success",
             data: response.data,
             transaction: result.rows[0]
           });
         }else{
-          const result = await db.query(transactionQuery, [1000, user.id, "57a26a6b-8d66-4890-b5fd-6964b5d8c997" , 'TRUE'])
+         // const result = await db.query(transactionQuery, [1000, user.id, "57a26a6b-8d66-4890-b5fd-6964b5d8c997" , 'TRUE'])
           return res.status(201).json({
               status: "success",
               message: "Ip address doesn't match, possible fraud detected",
-              ip: response.data.IP,
-              continent_code:response.continent_code
+              ip: response.data.ip,
+              continent_code: response.data.continent_code
             });
         }
         
