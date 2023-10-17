@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../../../components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
-import { getSingleProduct} from "../../../../services/posts";
+import { getSingleProduct,getIp} from "../../../../services/posts";
 import { toast } from "react-hot-toast";
 import ProductCardSkeleton from "../../../../components/ProductCardSkeleton";
 import ErrorMessage from "../../../../components/ErrorMessage";
@@ -11,6 +11,16 @@ import {AiFillSecurityScan} from "react-icons/ai";
 
 const Payment = () => {
   const { id } = useParams();
+  const { data:IpData} = useQuery({
+    queryFn: () => getIp(),
+    queryKey: ["getip"],
+    onError: (error) => {
+      toast.error(error.message);
+      console.log(error);
+     console.log(IpData.data?.ip)
+    },
+  })
+
   const { data, isLoading, isError } = useQuery({
     queryFn: () => getSingleProduct({ id }),
     queryKey: ["payment", id ],
