@@ -1,6 +1,5 @@
 import React from 'react';
-import {Button, Carousel } from 'antd';
-import {FiSearch} from 'react-icons/fi';
+import { Carousel } from 'antd';
 import { images } from '../../../constants';
 import { TypeAnimation } from 'react-type-animation';
 
